@@ -1,4 +1,4 @@
-# CockroachDB Personal Sandbox
+#CockroachDB Personal Sandbox
 
 Recently I became interested in CockroachDB and what it could do for me. I created this repo as a place to play around with the database and see what I could do with it.
 
