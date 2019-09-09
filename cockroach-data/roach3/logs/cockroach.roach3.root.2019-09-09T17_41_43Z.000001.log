@@ -1,0 +1,159 @@
+I190909 17:41:43.575402 1 util/log/clog.go:1199  [config] file created at: 2019/09/09 17:41:43
+I190909 17:41:43.575402 1 util/log/clog.go:1199  [config] running on machine: roach3
+I190909 17:41:43.575402 1 util/log/clog.go:1199  [config] binary: CockroachDB CCL v19.1.4 (x86_64-unknown-linux-gnu, built 2019/08/06 15:34:13, go1.11.6)
+I190909 17:41:43.575402 1 util/log/clog.go:1199  [config] arguments: [/cockroach/cockroach start --insecure --join=roach1]
+I190909 17:41:43.575402 1 util/log/clog.go:1199  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I190909 17:41:43.575401 1 cli/start.go:1033  logging to directory /cockroach/cockroach-data/logs
+W190909 17:41:43.578332 1 cli/start.go:1068  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v19.1/secure-a-cluster.html
+I190909 17:41:43.579435 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+W190909 17:41:43.579682 1 cli/start.go:944  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (500 MiB).
+I190909 17:41:43.579966 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+W190909 17:41:43.579986 1 cli/start.go:957  Using the default setting for --max-sql-memory (128 MiB).
+  A significantly larger value is usually needed in production.
+  If you have a dedicated server a reasonable setting is --max-sql-memory=.25 (500 MiB).
+I190909 17:41:43.580320 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+I190909 17:41:43.580360 1 cli/start.go:1082  CockroachDB CCL v19.1.4 (x86_64-unknown-linux-gnu, built 2019/08/06 15:34:13, go1.11.6)
+I190909 17:41:43.706024 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+I190909 17:41:43.706047 1 server/config.go:386  system total memory: 2.0 GiB
+I190909 17:41:43.706135 1 server/config.go:388  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   128 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I190909 17:41:43.706166 1 cli/start.go:922  using local environment variables: COCKROACH_CHANNEL=official-docker
+I190909 17:41:43.706190 1 cli/start.go:929  process identity: uid 0 euid 0 gid 0 egid 0
+I190909 17:41:43.706232 1 cli/start.go:554  starting cockroach node
+I190909 17:41:43.714266 16 storage/engine/rocksdb.go:613  opening rocksdb instance at "/cockroach/cockroach-data/cockroach-temp615914527"
+I190909 17:41:43.809068 16 server/server.go:879  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I190909 17:41:43.812099 16 storage/engine/rocksdb.go:613  opening rocksdb instance at "/cockroach/cockroach-data"
+I190909 17:41:43.861793 16 server/config.go:494  [n?] 1 storage engine initialized
+I190909 17:41:43.861808 16 server/config.go:497  [n?] RocksDB cache size: 128 MiB
+I190909 17:41:43.861813 16 server/config.go:497  [n?] store 0: RocksDB, max size 0 B, max open file limit 1043576
+W190909 17:41:43.867520 16 gossip/gossip.go:1496  [n?] no incoming or outgoing connections
+I190909 17:41:43.867553 16 server/server.go:1470  [n?] no stores bootstrapped and --join flag specified, awaiting init command or join with an already initialized node.
+I190909 17:41:43.871585 82 gossip/client.go:128  [n?] started gossip client to roach1:26257
+I190909 17:41:43.874368 16 server/node.go:699  [n?] connecting to gossip network to verify cluster ID...
+I190909 17:41:43.874437 16 server/node.go:719  [n?] node connected via gossip and verified as part of cluster "41945e40-a82f-46f1-987b-3adc8b371b6b"
+W190909 17:41:43.875755 30 cli/start.go:896  neither --listen-addr nor --advertise-addr was specified.
+The server will advertise "roach3" to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+I190909 17:41:43.881204 16 server/node.go:412  [n?] new node allocated ID 3
+I190909 17:41:43.881372 16 gossip/gossip.go:392  [n3] NodeDescriptor set to node_id:3 address:<network_field:"tcp" address_field:"roach3:26257" > attrs:<> locality:<> ServerVersion:<major_val:19 minor_val:1 patch:0 unstable:0 > build_tag:"v19.1.4" started_at:1568050903881211184 
+I190909 17:41:43.881443 16 storage/stores.go:244  [n3] read 0 node addresses from persistent storage
+I190909 17:41:43.881609 16 storage/stores.go:263  [n3] wrote 2 node addresses to persistent storage
+I190909 17:41:44.056991 16 server/node.go:677  [n3] bootstrapped store [n3,s3]
+I190909 17:41:44.108071 16 server/node.go:542  [n3] node=3: started with [<no-attributes>=/cockroach/cockroach-data] engine(s) and attributes []
+I190909 17:41:44.111533 16 server/status/recorder.go:610  [n3] available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+I190909 17:41:44.116861 16 server/server.go:1592  [n3] starting http server at [::]:8080 (use: roach3:8080)
+I190909 17:41:44.116879 16 server/server.go:1594  [n3] starting grpc/postgres server at [::]:26257
+I190909 17:41:44.116887 16 server/server.go:1595  [n3] advertising CockroachDB node at roach3:26257
+W190909 17:41:44.116943 16 jobs/registry.go:341  [n3] unable to get node liveness: node not in the liveness table
+I190909 17:41:44.119479 16 server/server.go:1660  [n3] done ensuring all necessary migrations have run
+I190909 17:41:44.119491 16 server/server.go:1663  [n3] serving sql connections
+I190909 17:41:44.119570 16 cli/start.go:689  [config] clusterID: 41945e40-a82f-46f1-987b-3adc8b371b6b
+I190909 17:41:44.119583 16 cli/start.go:697  node startup completed:
+CockroachDB node starting at 2019-09-09 17:41:44.119527849 +0000 UTC (took 0.5s)
+build:               CCL v19.1.4 @ 2019/08/06 15:34:13 (go1.11.6)
+webui:               http://roach3:8080
+sql:                 postgresql://root@roach3:26257?sslmode=disable
+client flags:        /cockroach/cockroach <client cmd> --host=roach3:26257 --insecure
+logs:                /cockroach/cockroach-data/logs
+temp dir:            /cockroach/cockroach-data/cockroach-temp615914527
+external I/O path:   /cockroach/cockroach-data/extern
+store[0]:            path=/cockroach/cockroach-data
+status:              initialized new node, joined pre-existing cluster
+clusterID:           41945e40-a82f-46f1-987b-3adc8b371b6b
+nodeID:              3
+I190909 17:41:44.143424 149 server/server_update.go:67  [n3] no need to upgrade, cluster already at the newest version
+I190909 17:41:44.182355 171 storage/replica_raftstorage.go:814  [n3,s3,r6/?:{-}] applying preemptive snapshot at index 34 (id=0afea6bf, encoded size=9012, 1 rocksdb batches, 0 log entries)
+I190909 17:41:44.183396 152 sql/event_log.go:135  [n3] Event: "node_join", target: 3, info: {Descriptor:{NodeID:3 Address:roach3:26257 Attrs: Locality: ServerVersion:19.1 BuildTag:v19.1.4 StartedAt:1568050903881211184 LocalityAddress:[] XXX_NoUnkeyedLiteral:{} XXX_sizecache:0} ClusterID:41945e40-a82f-46f1-987b-3adc8b371b6b StartedAt:1568050903881211184 LastUp:1568050903881211184}
+I190909 17:41:44.184879 171 storage/replica_raftstorage.go:820  [n3,s3,r6/?:/Table/{SystemCon…-11}] applied preemptive snapshot in 2ms [clear=0ms batch=0ms entries=0ms commit=2ms]
+I190909 17:41:44.241486 212 storage/replica_raftstorage.go:814  [n3,s3,r4/?:{-}] applying preemptive snapshot at index 19 (id=e9e81aa1, encoded size=181402, 1 rocksdb batches, 0 log entries)
+I190909 17:41:44.258523 212 storage/replica_raftstorage.go:820  [n3,s3,r4/?:/System{/tsd-tse}] applied preemptive snapshot in 17ms [clear=0ms batch=1ms entries=0ms commit=14ms]
+I190909 17:41:44.371891 205 storage/replica_raftstorage.go:814  [n3,s3,r3/?:{-}] applying preemptive snapshot at index 41 (id=9b7d30bc, encoded size=73200, 1 rocksdb batches, 0 log entries)
+I190909 17:41:44.373531 205 storage/replica_raftstorage.go:820  [n3,s3,r3/?:/System/{NodeLive…-tsd}] applied preemptive snapshot in 2ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:44.404446 249 storage/replica_raftstorage.go:814  [n3,s3,r8/?:{-}] applying preemptive snapshot at index 31 (id=2323fad0, encoded size=4700, 1 rocksdb batches, 0 log entries)
+I190909 17:41:44.405140 249 storage/replica_raftstorage.go:820  [n3,s3,r8/?:/Table/1{2-3}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:44.429385 266 storage/replica_raftstorage.go:814  [n3,s3,r5/?:{-}] applying preemptive snapshot at index 18 (id=42979be9, encoded size=703, 1 rocksdb batches, 0 log entries)
+I190909 17:41:44.429983 266 storage/replica_raftstorage.go:820  [n3,s3,r5/?:/{Systemtse-Table/System…}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=0ms]
+I190909 17:41:44.453401 277 storage/replica_raftstorage.go:814  [n3,s3,r7/?:{-}] applying preemptive snapshot at index 17 (id=af722f4b, encoded size=601, 1 rocksdb batches, 0 log entries)
+I190909 17:41:44.453990 277 storage/replica_raftstorage.go:820  [n3,s3,r7/?:/Table/1{1-2}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=0ms]
+I190909 17:41:44.500486 298 storage/replica_raftstorage.go:814  [n3,s3,r19/?:{-}] applying preemptive snapshot at index 16 (id=be61eb2a, encoded size=713, 1 rocksdb batches, 0 log entries)
+I190909 17:41:44.502225 298 storage/replica_raftstorage.go:820  [n3,s3,r19/?:/Table/2{3-4}] applied preemptive snapshot in 2ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:44.556794 288 storage/replica_raftstorage.go:814  [n3,s3,r9/?:{-}] applying preemptive snapshot at index 44 (id=afec5c7d, encoded size=9135, 1 rocksdb batches, 0 log entries)
+I190909 17:41:44.557702 288 storage/replica_raftstorage.go:820  [n3,s3,r9/?:/Table/1{3-4}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:45.635244 28 gossip/gossip.go:1510  [n3] node has connected to cluster via gossip
+I190909 17:41:45.635542 28 storage/stores.go:263  [n3] wrote 2 node addresses to persistent storage
+I190909 17:41:47.093291 312 storage/replica_raftstorage.go:814  [n3,s3,r10/?:{-}] applying preemptive snapshot at index 17 (id=c2fdc603, encoded size=615, 1 rocksdb batches, 0 log entries)
+I190909 17:41:47.093999 312 storage/replica_raftstorage.go:820  [n3,s3,r10/?:/Table/1{4-5}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:48.096332 319 storage/replica_raftstorage.go:814  [n3,s3,r17/?:{-}] applying preemptive snapshot at index 17 (id=e81817c8, encoded size=615, 1 rocksdb batches, 0 log entries)
+I190909 17:41:48.097020 319 storage/replica_raftstorage.go:820  [n3,s3,r17/?:/Table/2{1-2}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:50.104232 355 storage/replica_raftstorage.go:814  [n3,s3,r1/?:{-}] applying preemptive snapshot at index 59 (id=1f3e79fa, encoded size=2732, 1 rocksdb batches, 0 log entries)
+I190909 17:41:50.106462 355 storage/replica_raftstorage.go:820  [n3,s3,r1/?:/{Min-System/NodeL…}] applied preemptive snapshot in 2ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:51.109969 348 storage/replica_raftstorage.go:814  [n3,s3,r2/?:{-}] applying preemptive snapshot at index 24 (id=85f3a84f, encoded size=1053, 1 rocksdb batches, 0 log entries)
+I190909 17:41:51.111162 348 storage/replica_raftstorage.go:820  [n3,s3,r2/?:/System/NodeLiveness{-Max}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:52.105099 371 storage/replica_raftstorage.go:814  [n3,s3,r14/?:{-}] applying preemptive snapshot at index 17 (id=99b617f5, encoded size=615, 1 rocksdb batches, 0 log entries)
+I190909 17:41:52.107294 371 storage/replica_raftstorage.go:820  [n3,s3,r14/?:/Table/1{8-9}] applied preemptive snapshot in 2ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:54.111229 380 storage/replica_raftstorage.go:814  [n3,s3,r16/?:{-}] applying preemptive snapshot at index 17 (id=df4f2ac5, encoded size=615, 1 rocksdb batches, 0 log entries)
+I190909 17:41:54.112083 380 storage/replica_raftstorage.go:820  [n3,s3,r16/?:/Table/2{0-1}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:54.122240 141 server/status/runtime.go:500  [n3] runtime stats: 169 MiB RSS, 158 goroutines, 94 MiB/30 MiB/135 MiB GO alloc/idle/total, 14 MiB/18 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (9x), 223 KiB/136 KiB (r/w)net
+I190909 17:41:54.227013 136 storage/store.go:4216  [n3,s3] sstables (read amplification = 0):
+I190909 17:41:54.227306 136 storage/store.go:4217  [n3,s3] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+Uptime(secs): 10.4 total, 10.4 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I190909 17:41:55.095876 385 storage/replica_raftstorage.go:814  [n3,s3,r11/?:{-}] applying preemptive snapshot at index 13 (id=b551930e, encoded size=226, 1 rocksdb batches, 0 log entries)
+I190909 17:41:55.096852 385 storage/replica_raftstorage.go:820  [n3,s3,r11/?:/Table/1{5-6}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:56.178592 407 storage/replica_raftstorage.go:814  [n3,s3,r20/?:{-}] applying preemptive snapshot at index 17 (id=87e6f113, encoded size=618, 1 rocksdb batches, 0 log entries)
+I190909 17:41:56.180578 407 storage/replica_raftstorage.go:820  [n3,s3,r20/?:/{Table/24-Max}] applied preemptive snapshot in 2ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:58.221546 420 storage/replica_raftstorage.go:814  [n3,s3,r18/?:{-}] applying preemptive snapshot at index 17 (id=0f525c9b, encoded size=615, 1 rocksdb batches, 0 log entries)
+I190909 17:41:58.222235 420 storage/replica_raftstorage.go:820  [n3,s3,r18/?:/Table/2{2-3}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:41:59.121520 441 storage/replica_raftstorage.go:814  [n3,s3,r15/?:{-}] applying preemptive snapshot at index 17 (id=a44ce522, encoded size=615, 1 rocksdb batches, 0 log entries)
+I190909 17:41:59.122654 441 storage/replica_raftstorage.go:820  [n3,s3,r15/?:/Table/{19-20}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:42:01.129933 448 storage/replica_raftstorage.go:814  [n3,s3,r12/?:{-}] applying preemptive snapshot at index 17 (id=07eca26f, encoded size=615, 1 rocksdb batches, 0 log entries)
+I190909 17:42:01.130573 448 storage/replica_raftstorage.go:820  [n3,s3,r12/?:/Table/1{6-7}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=0ms]
+I190909 17:42:02.111882 469 storage/replica_raftstorage.go:814  [n3,s3,r13/?:{-}] applying preemptive snapshot at index 13 (id=d1a450fd, encoded size=226, 1 rocksdb batches, 0 log entries)
+I190909 17:42:02.112910 469 storage/replica_raftstorage.go:820  [n3,s3,r13/?:/Table/1{7-8}] applied preemptive snapshot in 1ms [clear=0ms batch=0ms entries=0ms commit=1ms]
+I190909 17:42:04.123378 141 server/status/runtime.go:500  [n3] runtime stats: 181 MiB RSS, 158 goroutines, 104 MiB/20 MiB/135 MiB GO alloc/idle/total, 15 MiB/18 MiB CGO alloc/total, 242.8 CGO/sec, 3.1/1.7 %(u/s)time, 0.0 %gc (0x), 151 KiB/95 KiB (r/w)net
+I190909 17:42:14.124789 141 server/status/runtime.go:500  [n3] runtime stats: 190 MiB RSS, 160 goroutines, 112 MiB/12 MiB/135 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 30.5 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 79 KiB/40 KiB (r/w)net
+I190909 17:42:24.126525 141 server/status/runtime.go:500  [n3] runtime stats: 199 MiB RSS, 159 goroutines, 120 MiB/4.3 MiB/135 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 26.8 CGO/sec, 1.4/0.5 %(u/s)time, 0.0 %gc (0x), 76 KiB/34 KiB (r/w)net
+I190909 17:42:34.130041 141 server/status/runtime.go:500  [n3] runtime stats: 205 MiB RSS, 159 goroutines, 80 MiB/103 MiB/201 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 27.1 CGO/sec, 1.4/1.0 %(u/s)time, 0.0 %gc (1x), 76 KiB/35 KiB (r/w)net
+I190909 17:42:44.111429 137 gossip/gossip.go:557  [n3] gossip status (ok, 3 nodes)
+gossip client (1/3 cur/max conns)
+  1: roach1:26257 (1m0s: infos 85/271 sent/received, bytes 26583B/52860B sent/received)
+gossip server (0/3 cur/max conns, infos 85/271 sent/received, bytes 26583B/52860B sent/received)
+gossip connectivity
+  n1 [sentinel];
+  n2 -> n1; n3 -> n1;
+I190909 17:42:44.139184 141 server/status/runtime.go:500  [n3] runtime stats: 207 MiB RSS, 159 goroutines, 88 MiB/96 MiB/201 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 28.8 CGO/sec, 2.3/1.1 %(u/s)time, 0.0 %gc (0x), 77 KiB/38 KiB (r/w)net
+I190909 17:42:54.140495 141 server/status/runtime.go:500  [n3] runtime stats: 207 MiB RSS, 158 goroutines, 96 MiB/89 MiB/201 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 26.7 CGO/sec, 1.3/0.8 %(u/s)time, 0.0 %gc (0x), 75 KiB/34 KiB (r/w)net
+I190909 17:43:04.142298 141 server/status/runtime.go:500  [n3] runtime stats: 208 MiB RSS, 153 goroutines, 104 MiB/82 MiB/201 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 26.9 CGO/sec, 1.1/0.6 %(u/s)time, 0.0 %gc (0x), 74 KiB/33 KiB (r/w)net
+I190909 17:43:14.143449 141 server/status/runtime.go:500  [n3] runtime stats: 208 MiB RSS, 154 goroutines, 112 MiB/74 MiB/201 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 31.5 CGO/sec, 1.1/0.6 %(u/s)time, 0.0 %gc (0x), 79 KiB/41 KiB (r/w)net
+I190909 17:43:24.144386 141 server/status/runtime.go:500  [n3] runtime stats: 210 MiB RSS, 154 goroutines, 120 MiB/67 MiB/201 MiB GO alloc/idle/total, 16 MiB/19 MiB CGO alloc/total, 29.4 CGO/sec, 1.3/1.3 %(u/s)time, 0.0 %gc (0x), 75 KiB/35 KiB (r/w)net

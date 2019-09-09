@@ -1,0 +1,303 @@
+I190909 17:41:41.726863 1 util/log/clog.go:1199  [config] file created at: 2019/09/09 17:41:41
+I190909 17:41:41.726863 1 util/log/clog.go:1199  [config] running on machine: roach1
+I190909 17:41:41.726863 1 util/log/clog.go:1199  [config] binary: CockroachDB CCL v19.1.4 (x86_64-unknown-linux-gnu, built 2019/08/06 15:34:13, go1.11.6)
+I190909 17:41:41.726863 1 util/log/clog.go:1199  [config] arguments: [/cockroach/cockroach start --insecure]
+I190909 17:41:41.726863 1 util/log/clog.go:1199  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I190909 17:41:41.726847 1 cli/start.go:1033  logging to directory /cockroach/cockroach-data/logs
+W190909 17:41:41.738208 1 cli/start.go:1068  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v19.1/secure-a-cluster.html
+I190909 17:41:41.739245 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+W190909 17:41:41.749906 1 cli/start.go:944  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (500 MiB).
+I190909 17:41:41.750155 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+W190909 17:41:41.750191 1 cli/start.go:957  Using the default setting for --max-sql-memory (128 MiB).
+  A significantly larger value is usually needed in production.
+  If you have a dedicated server a reasonable setting is --max-sql-memory=.25 (500 MiB).
+I190909 17:41:41.750353 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+I190909 17:41:41.750374 1 cli/start.go:1082  CockroachDB CCL v19.1.4 (x86_64-unknown-linux-gnu, built 2019/08/06 15:34:13, go1.11.6)
+I190909 17:41:41.862688 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+I190909 17:41:41.862704 1 server/config.go:386  system total memory: 2.0 GiB
+I190909 17:41:41.862743 1 server/config.go:388  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   128 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I190909 17:41:41.862777 1 cli/start.go:922  using local environment variables: COCKROACH_CHANNEL=official-docker
+I190909 17:41:41.862790 1 cli/start.go:929  process identity: uid 0 euid 0 gid 0 egid 0
+I190909 17:41:41.862799 1 cli/start.go:554  starting cockroach node
+I190909 17:41:41.864803 16 storage/engine/rocksdb.go:613  opening rocksdb instance at "/cockroach/cockroach-data/cockroach-temp096329517"
+I190909 17:41:41.937992 16 server/server.go:879  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I190909 17:41:41.944552 16 storage/engine/rocksdb.go:613  opening rocksdb instance at "/cockroach/cockroach-data"
+I190909 17:41:41.996884 16 server/config.go:494  [n?] 1 storage engine initialized
+I190909 17:41:41.996895 16 server/config.go:497  [n?] RocksDB cache size: 128 MiB
+I190909 17:41:41.996901 16 server/config.go:497  [n?] store 0: RocksDB, max size 0 B, max open file limit 1043576
+W190909 17:41:42.005450 16 cli/start.go:896  neither --listen-addr nor --advertise-addr was specified.
+The server will advertise "roach1" to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+I190909 17:41:42.046417 16 util/stop/stopper.go:546  [n?] quiescing; tasks left:
+1      [async] intent_resolver_ir_batcher
+1      [async] intent_resolver_gc_batcher
+1      [async] closedts-rangefeed-subscriber
+I190909 17:41:42.046433 16 util/stop/stopper.go:546  [n?] quiescing; tasks left:
+1      [async] intent_resolver_ir_batcher
+1      [async] closedts-rangefeed-subscriber
+I190909 17:41:42.046466 16 util/stop/stopper.go:546  [n?] quiescing; tasks left:
+1      [async] intent_resolver_ir_batcher
+I190909 17:41:42.046539 16 server/node.go:358  [n?] **** cluster 41945e40-a82f-46f1-987b-3adc8b371b6b has been created
+I190909 17:41:42.046553 16 server/server.go:1432  [n?] **** add additional nodes by specifying --join=roach1:26257
+I190909 17:41:42.046834 16 gossip/gossip.go:392  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"roach1:26257" > attrs:<> locality:<> ServerVersion:<major_val:19 minor_val:1 patch:0 unstable:0 > build_tag:"v19.1.4" started_at:1568050902046742376 
+W190909 17:41:42.064617 129 storage/store.go:1525  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I190909 17:41:42.100570 16 server/node.go:461  [n1] initialized store [n1,s1]: disk (capacity=49 TiB, available=10 TiB, used=30 KiB, logicalBytes=8.3 KiB), ranges=20, leases=2, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=887.00 pMax=7467.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I190909 17:41:42.100652 16 storage/stores.go:244  [n1] read 0 node addresses from persistent storage
+I190909 17:41:42.100755 16 server/node.go:699  [n1] connecting to gossip network to verify cluster ID...
+I190909 17:41:42.100769 16 server/node.go:719  [n1] node connected via gossip and verified as part of cluster "41945e40-a82f-46f1-987b-3adc8b371b6b"
+I190909 17:41:42.100839 16 server/node.go:542  [n1] node=1: started with [<no-attributes>=/cockroach/cockroach-data] engine(s) and attributes []
+I190909 17:41:42.102688 16 server/status/recorder.go:610  [n1] available memory from cgroups (8.0 EiB) exceeds system memory 2.0 GiB, using system memory
+I190909 17:41:42.104522 16 server/server.go:1592  [n1] starting http server at [::]:8080 (use: roach1:8080)
+I190909 17:41:42.104532 16 server/server.go:1594  [n1] starting grpc/postgres server at [::]:26257
+I190909 17:41:42.104552 16 server/server.go:1595  [n1] advertising CockroachDB node at roach1:26257
+W190909 17:41:42.104578 16 jobs/registry.go:341  [n1] unable to get node liveness: node not in the liveness table
+I190909 17:41:42.201756 159 sql/event_log.go:135  [n1,intExec=optInToDiagnosticsStatReporting] Event: "set_cluster_setting", target: 0, info: {SettingName:diagnostics.reporting.enabled Value:true User:root}
+I190909 17:41:42.213722 200 sql/event_log.go:135  [n1,intExec=set-setting] Event: "set_cluster_setting", target: 0, info: {SettingName:version Value:19.1 User:root}
+I190909 17:41:42.218626 207 sql/event_log.go:135  [n1,intExec=disableNetTrace] Event: "set_cluster_setting", target: 0, info: {SettingName:trace.debug.enable Value:false User:root}
+I190909 17:41:42.242947 228 sql/event_log.go:135  [n1,intExec=initializeClusterSecret] Event: "set_cluster_setting", target: 0, info: {SettingName:cluster.secret Value:6be94584-0ee8-40d2-9a69-f114f68aadb3 User:root}
+I190909 17:41:42.258592 234 sql/event_log.go:135  [n1,intExec=create-default-db] Event: "create_database", target: 50, info: {DatabaseName:defaultdb Statement:CREATE DATABASE IF NOT EXISTS defaultdb User:root}
+I190909 17:41:42.262266 238 sql/event_log.go:135  [n1,intExec=create-default-db] Event: "create_database", target: 51, info: {DatabaseName:postgres Statement:CREATE DATABASE IF NOT EXISTS postgres User:root}
+I190909 17:41:42.271946 16 server/server.go:1660  [n1] done ensuring all necessary migrations have run
+I190909 17:41:42.271956 16 server/server.go:1663  [n1] serving sql connections
+I190909 17:41:42.272141 16 cli/start.go:689  [config] clusterID: 41945e40-a82f-46f1-987b-3adc8b371b6b
+I190909 17:41:42.272160 16 cli/start.go:697  node startup completed:
+CockroachDB node starting at 2019-09-09 17:41:42.271994804 +0000 UTC (took 0.5s)
+build:               CCL v19.1.4 @ 2019/08/06 15:34:13 (go1.11.6)
+webui:               http://roach1:8080
+sql:                 postgresql://root@roach1:26257?sslmode=disable
+client flags:        /cockroach/cockroach <client cmd> --host=roach1:26257 --insecure
+logs:                /cockroach/cockroach-data/logs
+temp dir:            /cockroach/cockroach-data/cockroach-temp096329517
+external I/O path:   /cockroach/cockroach-data/extern
+store[0]:            path=/cockroach/cockroach-data
+status:              initialized new cluster
+clusterID:           41945e40-a82f-46f1-987b-3adc8b371b6b
+nodeID:              1
+I190909 17:41:42.273671 258 server/server_update.go:67  [n1] no need to upgrade, cluster already at the newest version
+I190909 17:41:42.276160 261 sql/event_log.go:135  [n1] Event: "node_join", target: 1, info: {Descriptor:{NodeID:1 Address:roach1:26257 Attrs: Locality: ServerVersion:19.1 BuildTag:v19.1.4 StartedAt:1568050902046742376 LocalityAddress:[] XXX_NoUnkeyedLiteral:{} XXX_sizecache:0} ClusterID:41945e40-a82f-46f1-987b-3adc8b371b6b StartedAt:1568050902046742376 LastUp:1568050902046742376}
+I190909 17:41:42.924520 275 gossip/server.go:231  [n1] received initial cluster-verification connection from roach2:26257
+I190909 17:41:42.926760 275 gossip/server.go:231  [n1] received initial cluster-verification connection from roach2:26257
+I190909 17:41:42.933301 36 storage/stores.go:263  [n1] wrote 1 node addresses to persistent storage
+I190909 17:41:43.828719 40 gossip/gossip.go:1510  [n1] node has connected to cluster via gossip
+I190909 17:41:43.828987 40 storage/stores.go:263  [n1] wrote 1 node addresses to persistent storage
+I190909 17:41:43.872076 370 gossip/server.go:231  [n1] received initial cluster-verification connection from roach3:26257
+I190909 17:41:43.875069 370 gossip/server.go:231  [n1] received initial cluster-verification connection from roach3:26257
+I190909 17:41:43.882346 36 storage/stores.go:263  [n1] wrote 2 node addresses to persistent storage
+I190909 17:41:44.172605 179 storage/store_snapshot.go:780  [n1,replicate,s1,r6/1:/Table/{SystemCon…-11}] sending preemptive snapshot 0afea6bf at applied index 34
+I190909 17:41:44.172825 179 storage/store_snapshot.go:823  [n1,replicate,s1,r6/1:/Table/{SystemCon…-11}] streamed snapshot to (n3,s3):?: kv pairs: 60, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.185558 179 storage/replica_command.go:797  [n1,replicate,s1,r6/1:/Table/{SystemCon…-11}] change replicas (ADD_REPLICA (n3,s3):2): read existing descriptor r6:/Table/{SystemConfigSpan/Start-11} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:44.192542 179 storage/replica_raft.go:396  [n1,s1,r6/1:/Table/{SystemCon…-11}] proposing ADD_REPLICA((n3,s3):2): updated=[(n1,s1):1 (n3,s3):2] next=3
+I190909 17:41:44.193725 179 storage/store_snapshot.go:780  [n1,replicate,s1,r6/1:/Table/{SystemCon…-11}] sending preemptive snapshot 6d87f18c at applied index 36
+I190909 17:41:44.193926 179 storage/store_snapshot.go:823  [n1,replicate,s1,r6/1:/Table/{SystemCon…-11}] streamed snapshot to (n2,s2):?: kv pairs: 62, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.195403 179 storage/replica_command.go:797  [n1,replicate,s1,r6/1:/Table/{SystemCon…-11}] change replicas (ADD_REPLICA (n2,s2):3): read existing descriptor r6:/Table/{SystemConfigSpan/Start-11} [(n1,s1):1, (n3,s3):2, next=3, gen=0]
+I190909 17:41:44.207207 179 storage/replica_raft.go:396  [n1,s1,r6/1:/Table/{SystemCon…-11}] proposing ADD_REPLICA((n2,s2):3): updated=[(n1,s1):1 (n3,s3):2 (n2,s2):3] next=4
+I190909 17:41:44.223822 179 storage/store_snapshot.go:780  [n1,replicate,s1,r4/1:/System{/tsd-tse}] sending preemptive snapshot e9e81aa1 at applied index 19
+I190909 17:41:44.238531 179 storage/store_snapshot.go:823  [n1,replicate,s1,r4/1:/System{/tsd-tse}] streamed snapshot to (n3,s3):?: kv pairs: 1778, log entries: 0, rate-limit: 8.0 MiB/sec, 0.02s
+I190909 17:41:44.259745 179 storage/replica_command.go:797  [n1,replicate,s1,r4/1:/System{/tsd-tse}] change replicas (ADD_REPLICA (n3,s3):2): read existing descriptor r4:/System{/tsd-tse} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:44.320207 179 storage/replica_raft.go:396  [n1,s1,r4/1:/System{/tsd-tse}] proposing ADD_REPLICA((n3,s3):2): updated=[(n1,s1):1 (n3,s3):2] next=3
+I190909 17:41:44.322427 179 storage/store_snapshot.go:780  [n1,replicate,s1,r4/1:/System{/tsd-tse}] sending preemptive snapshot 08aa8fd0 at applied index 21
+I190909 17:41:44.328952 179 storage/store_snapshot.go:823  [n1,replicate,s1,r4/1:/System{/tsd-tse}] streamed snapshot to (n2,s2):?: kv pairs: 1780, log entries: 0, rate-limit: 8.0 MiB/sec, 0.01s
+I190909 17:41:44.333927 179 storage/replica_command.go:797  [n1,replicate,s1,r4/1:/System{/tsd-tse}] change replicas (ADD_REPLICA (n2,s2):3): read existing descriptor r4:/System{/tsd-tse} [(n1,s1):1, (n3,s3):2, next=3, gen=0]
+I190909 17:41:44.341773 179 storage/replica_raft.go:396  [n1,s1,r4/1:/System{/tsd-tse}] proposing ADD_REPLICA((n2,s2):3): updated=[(n1,s1):1 (n3,s3):2 (n2,s2):3] next=4
+I190909 17:41:44.343731 179 storage/store_snapshot.go:780  [n1,replicate,s1,r3/1:/System/{NodeLive…-tsd}] sending preemptive snapshot 360d8604 at applied index 39
+I190909 17:41:44.344043 179 storage/store_snapshot.go:823  [n1,replicate,s1,r3/1:/System/{NodeLive…-tsd}] streamed snapshot to (n2,s2):?: kv pairs: 34, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.345976 179 storage/replica_command.go:797  [n1,replicate,s1,r3/1:/System/{NodeLive…-tsd}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r3:/System/{NodeLivenessMax-tsd} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:44.364467 179 storage/replica_raft.go:396  [n1,s1,r3/1:/System/{NodeLive…-tsd}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:44.369135 179 storage/store_snapshot.go:780  [n1,replicate,s1,r3/1:/System/{NodeLive…-tsd}] sending preemptive snapshot 9b7d30bc at applied index 41
+I190909 17:41:44.371498 179 storage/store_snapshot.go:823  [n1,replicate,s1,r3/1:/System/{NodeLive…-tsd}] streamed snapshot to (n3,s3):?: kv pairs: 36, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.377949 179 storage/replica_command.go:797  [n1,replicate,s1,r3/1:/System/{NodeLive…-tsd}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r3:/System/{NodeLivenessMax-tsd} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:44.391639 179 storage/replica_raft.go:396  [n1,s1,r3/1:/System/{NodeLive…-tsd}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:44.394324 179 storage/store_snapshot.go:780  [n1,replicate,s1,r8/1:/Table/1{2-3}] sending preemptive snapshot 04f7b677 at applied index 29
+I190909 17:41:44.394499 179 storage/store_snapshot.go:823  [n1,replicate,s1,r8/1:/Table/1{2-3}] streamed snapshot to (n2,s2):?: kv pairs: 50, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.396089 179 storage/replica_command.go:797  [n1,replicate,s1,r8/1:/Table/1{2-3}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r8:/Table/1{2-3} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:44.402213 179 storage/replica_raft.go:396  [n1,s1,r8/1:/Table/1{2-3}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:44.403972 179 storage/store_snapshot.go:780  [n1,replicate,s1,r8/1:/Table/1{2-3}] sending preemptive snapshot 2323fad0 at applied index 31
+I190909 17:41:44.404134 179 storage/store_snapshot.go:823  [n1,replicate,s1,r8/1:/Table/1{2-3}] streamed snapshot to (n3,s3):?: kv pairs: 52, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.406065 179 storage/replica_command.go:797  [n1,replicate,s1,r8/1:/Table/1{2-3}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r8:/Table/1{2-3} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:44.415155 179 storage/replica_raft.go:396  [n1,s1,r8/1:/Table/1{2-3}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:44.418801 179 storage/store_snapshot.go:780  [n1,replicate,s1,r5/1:/{Systemtse-Table/System…}] sending preemptive snapshot 06bf4098 at applied index 16
+I190909 17:41:44.418873 179 storage/store_snapshot.go:823  [n1,replicate,s1,r5/1:/{Systemtse-Table/System…}] streamed snapshot to (n2,s2):?: kv pairs: 7, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.420188 179 storage/replica_command.go:797  [n1,replicate,s1,r5/1:/{Systemtse-Table/System…}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r5:/{Systemtse-Table/SystemConfigSpan/Start} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:44.427377 179 storage/replica_raft.go:396  [n1,s1,r5/1:/{Systemtse-Table/System…}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:44.429049 179 storage/store_snapshot.go:780  [n1,replicate,s1,r5/1:/{Systemtse-Table/System…}] sending preemptive snapshot 42979be9 at applied index 18
+I190909 17:41:44.429119 179 storage/store_snapshot.go:823  [n1,replicate,s1,r5/1:/{Systemtse-Table/System…}] streamed snapshot to (n3,s3):?: kv pairs: 9, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.430975 179 storage/replica_command.go:797  [n1,replicate,s1,r5/1:/{Systemtse-Table/System…}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r5:/{Systemtse-Table/SystemConfigSpan/Start} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:44.439525 179 storage/replica_raft.go:396  [n1,s1,r5/1:/{Systemtse-Table/System…}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:44.442747 179 storage/store_snapshot.go:780  [n1,replicate,s1,r7/1:/Table/1{1-2}] sending preemptive snapshot 0aaff051 at applied index 15
+I190909 17:41:44.442993 179 storage/store_snapshot.go:823  [n1,replicate,s1,r7/1:/Table/1{1-2}] streamed snapshot to (n2,s2):?: kv pairs: 6, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.444881 179 storage/replica_command.go:797  [n1,replicate,s1,r7/1:/Table/1{1-2}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r7:/Table/1{1-2} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:44.451609 179 storage/replica_raft.go:396  [n1,s1,r7/1:/Table/1{1-2}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:44.452810 179 storage/store_snapshot.go:780  [n1,replicate,s1,r7/1:/Table/1{1-2}] sending preemptive snapshot af722f4b at applied index 17
+I190909 17:41:44.452889 179 storage/store_snapshot.go:823  [n1,replicate,s1,r7/1:/Table/1{1-2}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.455055 179 storage/replica_command.go:797  [n1,replicate,s1,r7/1:/Table/1{1-2}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r7:/Table/1{1-2} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:44.464127 179 storage/replica_raft.go:396  [n1,s1,r7/1:/Table/1{1-2}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:44.467827 179 storage/store_snapshot.go:780  [n1,replicate,s1,r19/1:/Table/2{3-4}] sending preemptive snapshot 10b13682 at applied index 14
+I190909 17:41:44.467979 179 storage/store_snapshot.go:823  [n1,replicate,s1,r19/1:/Table/2{3-4}] streamed snapshot to (n2,s2):?: kv pairs: 9, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.469648 179 storage/replica_command.go:797  [n1,replicate,s1,r19/1:/Table/2{3-4}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r19:/Table/2{3-4} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:44.487273 179 storage/replica_raft.go:396  [n1,s1,r19/1:/Table/2{3-4}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:44.499643 179 storage/store_snapshot.go:780  [n1,replicate,s1,r19/1:/Table/2{3-4}] sending preemptive snapshot be61eb2a at applied index 16
+I190909 17:41:44.499794 179 storage/store_snapshot.go:823  [n1,replicate,s1,r19/1:/Table/2{3-4}] streamed snapshot to (n3,s3):?: kv pairs: 11, log entries: 0, rate-limit: 8.0 MiB/sec, 0.01s
+I190909 17:41:44.504393 179 storage/replica_command.go:797  [n1,replicate,s1,r19/1:/Table/2{3-4}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r19:/Table/2{3-4} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:44.529442 179 storage/replica_raft.go:396  [n1,s1,r19/1:/Table/2{3-4}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:44.542289 179 storage/queue.go:908  [n1,replicate] purgatory is now empty
+I190909 17:41:44.546783 567 storage/store_snapshot.go:780  [n1,replicate,s1,r9/1:/Table/1{3-4}] sending preemptive snapshot 72ae2f1e at applied index 40
+I190909 17:41:44.546953 567 storage/store_snapshot.go:823  [n1,replicate,s1,r9/1:/Table/1{3-4}] streamed snapshot to (n2,s2):?: kv pairs: 80, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.548852 567 storage/replica_command.go:797  [n1,replicate,s1,r9/1:/Table/1{3-4}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r9:/Table/1{3-4} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:44.554380 567 storage/replica_raft.go:396  [n1,s1,r9/1:/Table/1{3-4}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:44.556158 567 storage/store_snapshot.go:780  [n1,replicate,s1,r9/1:/Table/1{3-4}] sending preemptive snapshot afec5c7d at applied index 44
+I190909 17:41:44.556306 567 storage/store_snapshot.go:823  [n1,replicate,s1,r9/1:/Table/1{3-4}] streamed snapshot to (n3,s3):?: kv pairs: 82, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:44.558079 567 storage/replica_command.go:797  [n1,replicate,s1,r9/1:/Table/1{3-4}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r9:/Table/1{3-4} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:44.566697 567 storage/replica_raft.go:396  [n1,s1,r9/1:/Table/1{3-4}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:46.097653 584 storage/replica_consistency.go:198  [n1,consistencyChecker,s1,r4/1:/System{/tsd-tse}] triggering stats recomputation to resolve delta of {ContainsEstimates:true LastUpdateNanos:1568050905330104857 IntentAge:0 GCBytesAge:0 LiveBytes:-88698 LiveCount:-1773 KeyBytes:-85413 KeyCount:-1773 ValBytes:-3285 ValCount:-1773 IntentBytes:0 IntentCount:0 SysBytes:0 SysCount:0 XXX_NoUnkeyedLiteral:{} XXX_sizecache:0}
+I190909 17:41:47.082019 607 storage/store_snapshot.go:780  [n1,replicate,s1,r10/1:/Table/1{4-5}] sending preemptive snapshot 915faf6c at applied index 13
+I190909 17:41:47.082104 607 storage/store_snapshot.go:823  [n1,replicate,s1,r10/1:/Table/1{4-5}] streamed snapshot to (n2,s2):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:47.084081 607 storage/replica_command.go:797  [n1,replicate,s1,r10/1:/Table/1{4-5}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r10:/Table/1{4-5} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:47.090851 607 storage/replica_raft.go:396  [n1,s1,r10/1:/Table/1{4-5}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:47.092830 607 storage/store_snapshot.go:780  [n1,replicate,s1,r10/1:/Table/1{4-5}] sending preemptive snapshot c2fdc603 at applied index 17
+I190909 17:41:47.092972 607 storage/store_snapshot.go:823  [n1,replicate,s1,r10/1:/Table/1{4-5}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:47.094331 607 storage/replica_command.go:797  [n1,replicate,s1,r10/1:/Table/1{4-5}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r10:/Table/1{4-5} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:47.105532 607 storage/replica_raft.go:396  [n1,s1,r10/1:/Table/1{4-5}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:48.083629 619 storage/store_snapshot.go:780  [n1,replicate,s1,r17/1:/Table/2{1-2}] sending preemptive snapshot 26aed8eb at applied index 13
+I190909 17:41:48.083714 619 storage/store_snapshot.go:823  [n1,replicate,s1,r17/1:/Table/2{1-2}] streamed snapshot to (n2,s2):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:48.085475 619 storage/replica_command.go:797  [n1,replicate,s1,r17/1:/Table/2{1-2}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r17:/Table/2{1-2} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:48.094017 619 storage/replica_raft.go:396  [n1,s1,r17/1:/Table/2{1-2}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:48.095956 619 storage/store_snapshot.go:780  [n1,replicate,s1,r17/1:/Table/2{1-2}] sending preemptive snapshot e81817c8 at applied index 17
+I190909 17:41:48.096028 619 storage/store_snapshot.go:823  [n1,replicate,s1,r17/1:/Table/2{1-2}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:48.097379 619 storage/replica_command.go:797  [n1,replicate,s1,r17/1:/Table/2{1-2}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r17:/Table/2{1-2} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:48.107441 619 storage/replica_raft.go:396  [n1,s1,r17/1:/Table/2{1-2}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:50.083527 671 storage/store_snapshot.go:780  [n1,replicate,s1,r1/1:/{Min-System/NodeL…}] sending preemptive snapshot 8d4a4e3e at applied index 54
+I190909 17:41:50.084109 671 storage/store_snapshot.go:823  [n1,replicate,s1,r1/1:/{Min-System/NodeL…}] streamed snapshot to (n2,s2):?: kv pairs: 46, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:50.089723 671 storage/replica_command.go:797  [n1,replicate,s1,r1/1:/{Min-System/NodeL…}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r1:/{Min-System/NodeLiveness} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:50.100455 671 storage/replica_raft.go:396  [n1,s1,r1/1:/{Min-System/NodeL…}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:50.103313 671 storage/store_snapshot.go:780  [n1,replicate,s1,r1/1:/{Min-System/NodeL…}] sending preemptive snapshot 1f3e79fa at applied index 59
+I190909 17:41:50.103528 671 storage/store_snapshot.go:823  [n1,replicate,s1,r1/1:/{Min-System/NodeL…}] streamed snapshot to (n3,s3):?: kv pairs: 51, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:50.107725 671 storage/replica_command.go:797  [n1,replicate,s1,r1/1:/{Min-System/NodeL…}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r1:/{Min-System/NodeLiveness} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:50.124418 671 storage/replica_raft.go:396  [n1,s1,r1/1:/{Min-System/NodeL…}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:51.087440 699 storage/store_snapshot.go:780  [n1,replicate,s1,r2/1:/System/NodeLiveness{-Max}] sending preemptive snapshot b7bdab61 at applied index 20
+I190909 17:41:51.088024 699 storage/store_snapshot.go:823  [n1,replicate,s1,r2/1:/System/NodeLiveness{-Max}] streamed snapshot to (n2,s2):?: kv pairs: 11, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:51.091729 699 storage/replica_command.go:797  [n1,replicate,s1,r2/1:/System/NodeLiveness{-Max}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r2:/System/NodeLiveness{-Max} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:51.105067 699 storage/replica_raft.go:396  [n1,s1,r2/1:/System/NodeLiveness{-Max}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:51.109065 699 storage/store_snapshot.go:780  [n1,replicate,s1,r2/1:/System/NodeLiveness{-Max}] sending preemptive snapshot 85f3a84f at applied index 24
+I190909 17:41:51.109197 699 storage/store_snapshot.go:823  [n1,replicate,s1,r2/1:/System/NodeLiveness{-Max}] streamed snapshot to (n3,s3):?: kv pairs: 14, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:51.112019 699 storage/replica_command.go:797  [n1,replicate,s1,r2/1:/System/NodeLiveness{-Max}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r2:/System/NodeLiveness{-Max} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:51.178685 699 storage/replica_raft.go:396  [n1,s1,r2/1:/System/NodeLiveness{-Max}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:52.088235 727 storage/store_snapshot.go:780  [n1,replicate,s1,r14/1:/Table/1{8-9}] sending preemptive snapshot 74f48f93 at applied index 13
+I190909 17:41:52.088449 727 storage/store_snapshot.go:823  [n1,replicate,s1,r14/1:/Table/1{8-9}] streamed snapshot to (n2,s2):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:52.090358 727 storage/replica_command.go:797  [n1,replicate,s1,r14/1:/Table/1{8-9}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r14:/Table/1{8-9} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:52.101602 727 storage/replica_raft.go:396  [n1,s1,r14/1:/Table/1{8-9}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:52.104506 727 storage/store_snapshot.go:780  [n1,replicate,s1,r14/1:/Table/1{8-9}] sending preemptive snapshot 99b617f5 at applied index 17
+I190909 17:41:52.104705 727 storage/store_snapshot.go:823  [n1,replicate,s1,r14/1:/Table/1{8-9}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:52.110050 727 storage/replica_command.go:797  [n1,replicate,s1,r14/1:/Table/1{8-9}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r14:/Table/1{8-9} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:52.123390 142 server/status/runtime.go:500  [n1] runtime stats: 120 MiB RSS, 173 goroutines, 169 MiB/19 MiB/201 MiB GO alloc/idle/total, 14 MiB/18 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (10x), 196 KiB/330 KiB (r/w)net
+I190909 17:41:52.123875 727 storage/replica_raft.go:396  [n1,s1,r14/1:/Table/1{8-9}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:52.188062 137 storage/store.go:4216  [n1,s1] sstables (read amplification = 0):
+I190909 17:41:52.188123 137 storage/store.go:4217  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+Uptime(secs): 10.2 total, 10.2 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+W190909 17:41:52.254157 144 server/node.go:880  [n1,summaries] health alerts detected: {Alerts:[{StoreID:1 Category:METRICS Description:ranges.underreplicated Value:7 XXX_NoUnkeyedLiteral:{} XXX_sizecache:0}] XXX_NoUnkeyedLiteral:{} XXX_sizecache:0}
+I190909 17:41:54.092490 769 storage/store_snapshot.go:780  [n1,replicate,s1,r16/1:/Table/2{0-1}] sending preemptive snapshot 55e13efc at applied index 13
+I190909 17:41:54.092564 769 storage/store_snapshot.go:823  [n1,replicate,s1,r16/1:/Table/2{0-1}] streamed snapshot to (n2,s2):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:54.094620 769 storage/replica_command.go:797  [n1,replicate,s1,r16/1:/Table/2{0-1}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r16:/Table/2{0-1} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:54.107974 769 storage/replica_raft.go:396  [n1,s1,r16/1:/Table/2{0-1}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:54.110432 769 storage/store_snapshot.go:780  [n1,replicate,s1,r16/1:/Table/2{0-1}] sending preemptive snapshot df4f2ac5 at applied index 17
+I190909 17:41:54.110709 769 storage/store_snapshot.go:823  [n1,replicate,s1,r16/1:/Table/2{0-1}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:54.112981 769 storage/replica_command.go:797  [n1,replicate,s1,r16/1:/Table/2{0-1}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r16:/Table/2{0-1} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:54.140029 769 storage/replica_raft.go:396  [n1,s1,r16/1:/Table/2{0-1}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:55.095307 781 storage/store_snapshot.go:780  [n1,replicate,s1,r11/1:/Table/1{5-6}] sending preemptive snapshot b551930e at applied index 13
+I190909 17:41:55.095435 781 storage/store_snapshot.go:823  [n1,replicate,s1,r11/1:/Table/1{5-6}] streamed snapshot to (n3,s3):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:55.097413 781 storage/replica_command.go:797  [n1,replicate,s1,r11/1:/Table/1{5-6}] change replicas (ADD_REPLICA (n3,s3):2): read existing descriptor r11:/Table/1{5-6} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:55.113068 781 storage/replica_raft.go:396  [n1,s1,r11/1:/Table/1{5-6}] proposing ADD_REPLICA((n3,s3):2): updated=[(n1,s1):1 (n3,s3):2] next=3
+I190909 17:41:55.115226 781 storage/store_snapshot.go:780  [n1,replicate,s1,r11/1:/Table/1{5-6}] sending preemptive snapshot d524d6b4 at applied index 17
+I190909 17:41:55.115925 781 storage/store_snapshot.go:823  [n1,replicate,s1,r11/1:/Table/1{5-6}] streamed snapshot to (n2,s2):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:55.121195 781 storage/replica_command.go:797  [n1,replicate,s1,r11/1:/Table/1{5-6}] change replicas (ADD_REPLICA (n2,s2):3): read existing descriptor r11:/Table/1{5-6} [(n1,s1):1, (n3,s3):2, next=3, gen=0]
+I190909 17:41:55.141391 781 storage/replica_raft.go:396  [n1,s1,r11/1:/Table/1{5-6}] proposing ADD_REPLICA((n2,s2):3): updated=[(n1,s1):1 (n3,s3):2 (n2,s2):3] next=4
+I190909 17:41:56.103190 839 storage/store_snapshot.go:780  [n1,replicate,s1,r20/1:/{Table/24-Max}] sending preemptive snapshot 50055e46 at applied index 13
+I190909 17:41:56.103390 839 storage/store_snapshot.go:823  [n1,replicate,s1,r20/1:/{Table/24-Max}] streamed snapshot to (n2,s2):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:56.107026 839 storage/replica_command.go:797  [n1,replicate,s1,r20/1:/{Table/24-Max}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r20:/{Table/24-Max} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:56.157914 839 storage/replica_raft.go:396  [n1,s1,r20/1:/{Table/24-Max}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:56.172413 839 storage/store_snapshot.go:780  [n1,replicate,s1,r20/1:/{Table/24-Max}] sending preemptive snapshot 87e6f113 at applied index 17
+I190909 17:41:56.173743 839 storage/store_snapshot.go:823  [n1,replicate,s1,r20/1:/{Table/24-Max}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:56.183168 839 storage/replica_command.go:797  [n1,replicate,s1,r20/1:/{Table/24-Max}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r20:/{Table/24-Max} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:56.206486 839 storage/replica_raft.go:396  [n1,s1,r20/1:/{Table/24-Max}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:58.200623 873 storage/store_snapshot.go:780  [n1,replicate,s1,r18/1:/Table/2{2-3}] sending preemptive snapshot d705cec8 at applied index 13
+I190909 17:41:58.200749 873 storage/store_snapshot.go:823  [n1,replicate,s1,r18/1:/Table/2{2-3}] streamed snapshot to (n2,s2):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:58.204039 873 storage/replica_command.go:797  [n1,replicate,s1,r18/1:/Table/2{2-3}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r18:/Table/2{2-3} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:58.219250 873 storage/replica_raft.go:396  [n1,s1,r18/1:/Table/2{2-3}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:58.220981 873 storage/store_snapshot.go:780  [n1,replicate,s1,r18/1:/Table/2{2-3}] sending preemptive snapshot 0f525c9b at applied index 17
+I190909 17:41:58.221186 873 storage/store_snapshot.go:823  [n1,replicate,s1,r18/1:/Table/2{2-3}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:58.223229 873 storage/replica_command.go:797  [n1,replicate,s1,r18/1:/Table/2{2-3}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r18:/Table/2{2-3} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:58.239919 873 storage/replica_raft.go:396  [n1,s1,r18/1:/Table/2{2-3}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:41:59.103758 891 storage/store_snapshot.go:780  [n1,replicate,s1,r15/1:/Table/{19-20}] sending preemptive snapshot 815c7810 at applied index 13
+I190909 17:41:59.104018 891 storage/store_snapshot.go:823  [n1,replicate,s1,r15/1:/Table/{19-20}] streamed snapshot to (n2,s2):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:59.107729 891 storage/replica_command.go:797  [n1,replicate,s1,r15/1:/Table/{19-20}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r15:/Table/{19-20} [(n1,s1):1, next=2, gen=0]
+I190909 17:41:59.118282 891 storage/replica_raft.go:396  [n1,s1,r15/1:/Table/{19-20}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:41:59.121115 891 storage/store_snapshot.go:780  [n1,replicate,s1,r15/1:/Table/{19-20}] sending preemptive snapshot a44ce522 at applied index 17
+I190909 17:41:59.121261 891 storage/store_snapshot.go:823  [n1,replicate,s1,r15/1:/Table/{19-20}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:41:59.123212 891 storage/replica_command.go:797  [n1,replicate,s1,r15/1:/Table/{19-20}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r15:/Table/{19-20} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:41:59.136394 891 storage/replica_raft.go:396  [n1,s1,r15/1:/Table/{19-20}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:42:01.108181 954 storage/store_snapshot.go:780  [n1,replicate,s1,r12/1:/Table/1{6-7}] sending preemptive snapshot fb0b9330 at applied index 13
+I190909 17:42:01.108310 954 storage/store_snapshot.go:823  [n1,replicate,s1,r12/1:/Table/1{6-7}] streamed snapshot to (n2,s2):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:42:01.113116 954 storage/replica_command.go:797  [n1,replicate,s1,r12/1:/Table/1{6-7}] change replicas (ADD_REPLICA (n2,s2):2): read existing descriptor r12:/Table/1{6-7} [(n1,s1):1, next=2, gen=0]
+I190909 17:42:01.126902 954 storage/replica_raft.go:396  [n1,s1,r12/1:/Table/1{6-7}] proposing ADD_REPLICA((n2,s2):2): updated=[(n1,s1):1 (n2,s2):2] next=3
+I190909 17:42:01.129448 954 storage/store_snapshot.go:780  [n1,replicate,s1,r12/1:/Table/1{6-7}] sending preemptive snapshot 07eca26f at applied index 17
+I190909 17:42:01.129521 954 storage/store_snapshot.go:823  [n1,replicate,s1,r12/1:/Table/1{6-7}] streamed snapshot to (n3,s3):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:42:01.131008 954 storage/replica_command.go:797  [n1,replicate,s1,r12/1:/Table/1{6-7}] change replicas (ADD_REPLICA (n3,s3):3): read existing descriptor r12:/Table/1{6-7} [(n1,s1):1, (n2,s2):2, next=3, gen=0]
+I190909 17:42:01.145978 954 storage/replica_raft.go:396  [n1,s1,r12/1:/Table/1{6-7}] proposing ADD_REPLICA((n3,s3):3): updated=[(n1,s1):1 (n2,s2):2 (n3,s3):3] next=4
+I190909 17:42:02.111321 988 storage/store_snapshot.go:780  [n1,replicate,s1,r13/1:/Table/1{7-8}] sending preemptive snapshot d1a450fd at applied index 13
+I190909 17:42:02.111493 988 storage/store_snapshot.go:823  [n1,replicate,s1,r13/1:/Table/1{7-8}] streamed snapshot to (n3,s3):?: kv pairs: 5, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:42:02.113801 988 storage/replica_command.go:797  [n1,replicate,s1,r13/1:/Table/1{7-8}] change replicas (ADD_REPLICA (n3,s3):2): read existing descriptor r13:/Table/1{7-8} [(n1,s1):1, next=2, gen=0]
+I190909 17:42:02.125285 142 server/status/runtime.go:500  [n1] runtime stats: 140 MiB RSS, 172 goroutines, 186 MiB/1.0 MiB/201 MiB GO alloc/idle/total, 14 MiB/18 MiB CGO alloc/total, 455.7 CGO/sec, 3.8/3.2 %(u/s)time, 0.0 %gc (0x), 164 KiB/290 KiB (r/w)net
+I190909 17:42:02.126128 988 storage/replica_raft.go:396  [n1,s1,r13/1:/Table/1{7-8}] proposing ADD_REPLICA((n3,s3):2): updated=[(n1,s1):1 (n3,s3):2] next=3
+I190909 17:42:02.130963 988 storage/store_snapshot.go:780  [n1,replicate,s1,r13/1:/Table/1{7-8}] sending preemptive snapshot 5dd88ebb at applied index 17
+I190909 17:42:02.131085 988 storage/store_snapshot.go:823  [n1,replicate,s1,r13/1:/Table/1{7-8}] streamed snapshot to (n2,s2):?: kv pairs: 8, log entries: 0, rate-limit: 8.0 MiB/sec, 0.00s
+I190909 17:42:02.132571 988 storage/replica_command.go:797  [n1,replicate,s1,r13/1:/Table/1{7-8}] change replicas (ADD_REPLICA (n2,s2):3): read existing descriptor r13:/Table/1{7-8} [(n1,s1):1, (n3,s3):2, next=3, gen=0]
+I190909 17:42:02.152816 988 storage/replica_raft.go:396  [n1,s1,r13/1:/Table/1{7-8}] proposing ADD_REPLICA((n2,s2):3): updated=[(n1,s1):1 (n3,s3):2 (n2,s2):3] next=4
+W190909 17:42:02.253469 144 server/node.go:880  [n1,summaries] health alerts detected: {Alerts:[{StoreID:1 Category:METRICS Description:ranges.underreplicated Value:7 XXX_NoUnkeyedLiteral:{} XXX_sizecache:0}] XXX_NoUnkeyedLiteral:{} XXX_sizecache:0}
+I190909 17:42:12.127558 142 server/status/runtime.go:500  [n1] runtime stats: 150 MiB RSS, 170 goroutines, 197 MiB/54 MiB/268 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 79.4 CGO/sec, 1.1/1.4 %(u/s)time, 0.0 %gc (0x), 75 KiB/163 KiB (r/w)net
+I190909 17:42:22.136319 142 server/status/runtime.go:500  [n1] runtime stats: 163 MiB RSS, 169 goroutines, 208 MiB/43 MiB/268 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 42.7 CGO/sec, 1.0/1.3 %(u/s)time, 0.0 %gc (0x), 69 KiB/150 KiB (r/w)net
+I190909 17:42:32.141057 142 server/status/runtime.go:500  [n1] runtime stats: 174 MiB RSS, 169 goroutines, 218 MiB/33 MiB/268 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 42.4 CGO/sec, 2.0/0.6 %(u/s)time, 0.0 %gc (0x), 67 KiB/150 KiB (r/w)net
+I190909 17:42:42.123443 138 gossip/gossip.go:557  [n1] gossip status (ok, 3 nodes)
+gossip client (0/3 cur/max conns)
+gossip server (2/3 cur/max conns, infos 529/161 sent/received, bytes 112547B/42505B sent/received)
+  3: roach3:26257 (58s)
+  2: roach2:26257 (59s)
+gossip connectivity
+  n1 [sentinel];
+  n2 -> n1; n3 -> n1;
+I190909 17:42:42.161349 142 server/status/runtime.go:500  [n1] runtime stats: 182 MiB RSS, 168 goroutines, 149 MiB/93 MiB/268 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 45.8 CGO/sec, 2.9/1.5 %(u/s)time, 0.0 %gc (1x), 66 KiB/148 KiB (r/w)net
+I190909 17:42:52.164321 142 server/status/runtime.go:500  [n1] runtime stats: 182 MiB RSS, 168 goroutines, 160 MiB/84 MiB/268 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 44.8 CGO/sec, 2.4/1.4 %(u/s)time, 0.0 %gc (0x), 71 KiB/153 KiB (r/w)net
+I190909 17:43:02.166604 142 server/status/runtime.go:500  [n1] runtime stats: 183 MiB RSS, 168 goroutines, 170 MiB/75 MiB/268 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 38.7 CGO/sec, 1.3/1.0 %(u/s)time, 0.0 %gc (0x), 63 KiB/143 KiB (r/w)net
+I190909 17:43:12.171066 142 server/status/runtime.go:500  [n1] runtime stats: 201 MiB RSS, 172 goroutines, 218 MiB/28 MiB/268 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 47.1 CGO/sec, 2.4/1.9 %(u/s)time, 0.0 %gc (0x), 87 KiB/6.0 MiB (r/w)net
+I190909 17:43:22.172881 142 server/status/runtime.go:500  [n1] runtime stats: 204 MiB RSS, 172 goroutines, 230 MiB/18 MiB/268 MiB GO alloc/idle/total, 15 MiB/20 MiB CGO alloc/total, 44.0 CGO/sec, 1.3/1.6 %(u/s)time, 0.0 %gc (0x), 73 KiB/218 KiB (r/w)net
